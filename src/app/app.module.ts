@@ -14,12 +14,14 @@ import {
 import { uiReducer, usersReducer } from './reducers'
 
 import { AppComponent } from './components/app/app.component'
+import { PostComponent } from './components/post/post.component'
 import { UserComponent } from './components/user/user.component'
 import { UsersListComponent } from './components/users-list/users-list.component'
 
 @NgModule({
   declarations: [
     AppComponent,
+    PostComponent,
     UserComponent,
     UsersListComponent
   ],
