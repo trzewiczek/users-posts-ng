@@ -18,7 +18,10 @@ export class PostsEffects {
   ) {}
 
   fetchPosts$ = createEffect(() => this.actions$.pipe(
-    ofType(ActionTypes.POSTS_FETCHING_REQUESTED),
+    ofType(
+      ActionTypes.POSTS_FETCHING_REQUESTED,
+      ActionTypes.POST_SAVING_SUCCESS
+    ),
     mergeMap(__ => this.postsService.getAllPosts()
       .pipe(
         map(posts => postsFetchingSuccess({ posts })),

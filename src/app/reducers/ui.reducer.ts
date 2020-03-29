@@ -1,7 +1,12 @@
-import { createReducer, on } from "@ngrx/store";
+import { createReducer, on } from "@ngrx/store"
 
-import { UIState } from "../types";
-import { userSelected } from '../actions';
+import { UIState } from "../types"
+import {
+  postEditCanceled,
+  postSelected,
+  postSavingSuccess,
+  userSelected,
+} from '../actions'
 
 const initialState: UIState = {
   selectedUserId: null,
@@ -14,6 +19,23 @@ const __uiReducer = createReducer(initialState,
     (state, action) => ({
       ...state,
       selectedUserId: action.id
+    })
+  ),
+
+  on(
+    postSelected,
+    (state, action) => ({
+      ...state,
+      selectedPostId: action.id
+    })
+  ),
+
+  on(
+    postEditCanceled,
+    postSavingSuccess,
+    (state, __) => ({
+      ...state,
+      selectedPostId: null
     })
   )
 )

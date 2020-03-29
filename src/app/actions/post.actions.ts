@@ -3,7 +3,7 @@ import { createAction, props } from "@ngrx/store"
 import { Post } from '../types'
 import { ActionTypes } from "./action.types";
 
-export const postEditOpened = createAction(
+export const postSelected = createAction(
   ActionTypes.POST_EDIT_OPENED,
   props<{ id: number }>()
 )
@@ -18,6 +18,5 @@ export const postSavingRequested = createAction(
 )
 
 export const postSavingSuccess = createAction(
-  ActionTypes.POSTS_FETCHING_SUCCESS,
-  props<{ post: Post }>()
+  ActionTypes.POSTS_FETCHING_SUCCESS
 )
