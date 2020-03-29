@@ -4,5 +4,5 @@ import { ActionTypes } from "./action.types";
 
 export const userSelected = createAction(
   ActionTypes.USER_SELECTED,
-  props<{ id: number }>()
+  props<{ userId: number }>()
 )

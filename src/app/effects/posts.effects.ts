@@ -4,7 +4,8 @@ import { EMPTY } from "rxjs"
 import {
   catchError,
   map,
-  mergeMap
+  mergeMap,
+  tap
 } from "rxjs/operators"
 
 import { PostsService } from '../services'
@@ -19,10 +20,11 @@ export class PostsEffects {
 
   fetchPosts$ = createEffect(() => this.actions$.pipe(
     ofType(
-      ActionTypes.POSTS_FETCHING_REQUESTED,
-      ActionTypes.POST_SAVING_SUCCESS
+      ActionTypes.POST_SAVING_SUCCESS,
+      ActionTypes.USER_SELECTED
     ),
-    mergeMap(__ => this.postsService.getAllPosts()
+    map(({ userId }) => userId),
+    mergeMap(userId => this.postsService.getUsersPosts(userId)
       .pipe(
         map(posts => postsFetchingSuccess({ posts })),
         catchError(__ => EMPTY)

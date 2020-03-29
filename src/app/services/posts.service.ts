@@ -20,8 +20,8 @@ export class PostsService {
     private http: HttpClient
   ) {}
 
-  getAllPosts (): Observable<Post[]> {
-    return this.http.get<Post[]>(`${BASE_URL}/posts`)
+  getUsersPosts (userId: number): Observable<Post[]> {
+    return this.http.get<Post[]>(`${BASE_URL}/posts?userId=${userId}`)
       .pipe(
         catchError(__ => EMPTY)
       )

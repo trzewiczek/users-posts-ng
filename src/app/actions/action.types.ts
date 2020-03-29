@@ -1,5 +1,4 @@
 export enum ActionTypes {
-  POSTS_FETCHING_REQUESTED = '[Posts] Fetching requested',
   POSTS_FETCHING_SUCCESS   = '[Posts] Fetching success',
 
   POST_EDIT_OPENED         = '[Post] Post edit opened',

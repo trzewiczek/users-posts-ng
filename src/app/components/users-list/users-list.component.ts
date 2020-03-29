@@ -21,7 +21,7 @@ export class UsersListComponent implements OnInit{
     this.store.dispatch(usersFetchingRequested())
   }
 
-  onUserSelected (id: number): void {
-    this.store.dispatch(userSelected({ id }))
+  onUserSelected (userId: number): void {
+    this.store.dispatch(userSelected({ userId }))
   }
 }

@@ -13,10 +13,11 @@ export const postEditCanceled = createAction(
 )
 
 export const postSavingRequested = createAction(
-  ActionTypes.POSTS_FETCHING_REQUESTED,
+  ActionTypes.POST_SAVING_REQUESTED,
   props<{ post: Post }>()
 )
 
 export const postSavingSuccess = createAction(
-  ActionTypes.POSTS_FETCHING_SUCCESS
+  ActionTypes.POST_SAVING_SUCCESS,
+  props<{ userId: number }>()
 )

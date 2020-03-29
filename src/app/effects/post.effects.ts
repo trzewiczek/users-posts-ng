@@ -22,7 +22,7 @@ export class PostEffects {
     map(({ post }) => post),
     mergeMap(post => this.postService.savePost(post)
       .pipe(
-        map(__ => postSavingSuccess()),
+        map(({ userId }) => postSavingSuccess({ userId })),
         catchError(__ => EMPTY)
       ))
   ))

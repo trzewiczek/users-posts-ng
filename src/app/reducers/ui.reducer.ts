@@ -18,7 +18,7 @@ const __uiReducer = createReducer(initialState,
     userSelected,
     (state, action) => ({
       ...state,
-      selectedUserId: action.id
+      selectedUserId: action.userId
     })
   ),
 

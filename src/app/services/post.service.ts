@@ -21,7 +21,7 @@ export class PostService {
   ) {}
 
   savePost (post: Post): Observable<Post> {
-    return this.http.put<Post>(
+    return this.http.patch<Post>(
       `${BASE_URL}/posts/${post.id}`,
       post,
       this.httpOptions

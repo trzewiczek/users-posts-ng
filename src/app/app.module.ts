@@ -11,7 +11,11 @@ import {
   PostsEffects,
   UsersEffects
 } from './effects'
-import { uiReducer, usersReducer } from './reducers'
+import {
+  postsReducer,
+  uiReducer,
+  usersReducer
+} from './reducers'
 
 import { AppComponent } from './components/app/app.component'
 import { PostComponent } from './components/post/post.component'
@@ -32,6 +36,7 @@ import { UsersListComponent } from './components/users-list/users-list.component
     AppRoutingModule,
     HttpClientModule,
     StoreModule.forRoot({
+      posts: postsReducer,
       ui: uiReducer,
       users: usersReducer,
     }),
