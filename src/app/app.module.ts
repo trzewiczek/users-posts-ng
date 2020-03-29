@@ -15,6 +15,7 @@ import { uiReducer, usersReducer } from './reducers'
 
 import { AppComponent } from './components/app/app.component'
 import { PostComponent } from './components/post/post.component'
+import { PostsListComponent } from './components/posts-list/posts-list.component'
 import { UserComponent } from './components/user/user.component'
 import { UsersListComponent } from './components/users-list/users-list.component'
 
@@ -22,6 +23,7 @@ import { UsersListComponent } from './components/users-list/users-list.component
   declarations: [
     AppComponent,
     PostComponent,
+    PostsListComponent,
     UserComponent,
     UsersListComponent
   ],
