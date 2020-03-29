@@ -9,7 +9,7 @@ import { BASE_URL } from "../consts"
 @Injectable({
   providedIn: 'root'
 })
-export class PostsService {
+export class PostService {
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json'
@@ -20,10 +20,13 @@ export class PostsService {
     private http: HttpClient
   ) {}
 
-  getAllPosts (): Observable<Post[]> {
-    return this.http.get<Post[]>(`${BASE_URL}/posts`)
-      .pipe(
-        catchError(__ => EMPTY)
-      )
+  savePost (post: Post): Observable<Post> {
+    return this.http.put<Post>(
+      `${BASE_URL}/posts/${post.id}`,
+      post,
+      this.httpOptions
+    ).pipe(
+      catchError(__ => EMPTY)
+    )
   }
 }

@@ -6,7 +6,11 @@ import { EffectsModule } from '@ngrx/effects'
 
 import { AppRoutingModule } from './app-routing.module'
 
-import { UsersEffects } from './effects'
+import {
+  PostEffects,
+  PostsEffects,
+  UsersEffects
+} from './effects'
 import { uiReducer, usersReducer } from './reducers'
 
 import { AppComponent } from './components/app/app.component'
@@ -28,6 +32,8 @@ import { UsersListComponent } from './components/users-list/users-list.component
       users: usersReducer,
     }),
     EffectsModule.forRoot([
+      PostEffects,
+      PostsEffects,
       UsersEffects
     ])
   ],

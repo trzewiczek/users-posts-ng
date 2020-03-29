@@ -1,3 +1,4 @@
+export * from './post.actions'
 export * from './posts.actions'
 export * from './user.actions'
 export * from './users.actions'
