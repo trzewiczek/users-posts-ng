@@ -8,5 +8,7 @@ export enum ActionTypes {
   POST_SAVING_SUCCESS      = '[Post] Post saving success',
 
   USERS_FETCHING_REQUESTED = '[Users] Fetching requested',
-  USERS_FETCHING_SUCCESS   = '[Users] Fetching success'
+  USERS_FETCHING_SUCCESS   = '[Users] Fetching success',
+
+  USER_SELECTED            = '[User] User selected'
 }
