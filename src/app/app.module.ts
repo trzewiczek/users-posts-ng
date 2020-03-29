@@ -6,11 +6,13 @@ import { AppComponent } from './app.component'
 import { StoreModule } from '@ngrx/store'
 import { EffectsModule } from '@ngrx/effects'
 
-import { uiReducer, usersReducer } from "./reducers";
+import { uiReducer, usersReducer } from "./reducers"
+import { UserComponent } from './components/user/user.component'
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,
