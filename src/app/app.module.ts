@@ -1,27 +1,35 @@
-import { BrowserModule } from '@angular/platform-browser'
 import { NgModule } from '@angular/core'
-
-import { AppRoutingModule } from './app-routing.module'
-import { AppComponent } from './app.component'
+import { BrowserModule } from '@angular/platform-browser'
+import { HttpClientModule } from "@angular/common/http";
 import { StoreModule } from '@ngrx/store'
 import { EffectsModule } from '@ngrx/effects'
 
-import { uiReducer, usersReducer } from "./reducers"
+import { AppRoutingModule } from './app-routing.module'
+
+import { UsersEffects } from './effects'
+import { uiReducer, usersReducer } from './reducers'
+
+import { AppComponent } from './components/app/app.component'
 import { UserComponent } from './components/user/user.component'
+import { UsersListComponent } from './components/users-list/users-list.component'
 
 @NgModule({
   declarations: [
     AppComponent,
-    UserComponent
+    UserComponent,
+    UsersListComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     StoreModule.forRoot({
       ui: uiReducer,
       users: usersReducer,
     }),
-    EffectsModule.forRoot([])
+    EffectsModule.forRoot([
+      UsersEffects
+    ])
   ],
   providers: [],
   bootstrap: [AppComponent]

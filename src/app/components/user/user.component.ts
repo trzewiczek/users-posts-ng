@@ -16,9 +16,9 @@ export class UserComponent {
   @Input() user: User
   @Input() isSelected: boolean
 
-  @Output() userSelected = new EventEmitter<number>()
+  @Output() onUserSelected = new EventEmitter<number>()
 
   selectUser (id: number): void {
-    this.userSelected.emit(id)
+    this.onUserSelected.emit(id)
   }
 }
