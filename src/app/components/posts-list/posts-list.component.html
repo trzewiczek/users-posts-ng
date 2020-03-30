@@ -1,4 +1,6 @@
 <div>
+  <app-post-edit-form></app-post-edit-form>
+
   <div *ngFor="let post of posts$ | async">
     <app-post
       [post]="post"

@@ -2,7 +2,7 @@ import { Component } from '@angular/core'
 import { Store } from "@ngrx/store"
 import { Observable } from 'rxjs'
 
-import { Post } from 'src/app/types'
+import { Post, State } from 'src/app/types'
 import { postSelected } from 'src/app/actions'
 
 @Component({
@@ -14,7 +14,7 @@ export class PostsListComponent {
   posts$: Observable<Post[]> = this.store.select('posts')
 
   constructor(
-    private store: Store<{ posts: Post[] }>
+    private store: Store<State>
   ) { }
 
   onPostSelected (id: number): void {
